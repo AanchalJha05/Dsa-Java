@@ -107,6 +107,9 @@ public class maths_1{
 }*/
 /*public class maths_1{
     public void exponentsdemo(int a,int b){
+        if(n==1){
+            return true;
+        }
         boolean isNeg = false;
         if(b<0){
             b = -1*b;
@@ -132,7 +135,7 @@ public class maths_1{
 
     }
 }*/
-/*public class maths_1{
+public class maths_1{
     public void fastexponentation(int a ,int b){
         double res = 1.0;
         while(b>0){
@@ -152,9 +155,9 @@ public class maths_1{
 
     }
 
-}*/
+}
 
-public class maths_1{
+/*public class maths_1{
     public void numbersystem(String input,int currentbase){
         int res =0;
         int pos =0;
@@ -191,13 +194,50 @@ public class maths_1{
         maths_1 m = new maths_1();
         m.numbersystem("6B", 16);
     }
-}
+}*/
 
 
+/*public class maths_1{{
+    for(int i = 1;i<=4;i++){
+        for(int j=1;j<=4-i;j++){
+            System.out.print(" ");
+
+        }
+    }
+    for(int k=1;k<=2*i-1;k++){
+        System.out.print("*");
+    }
+    System.out.println();
+}*/
 
 
+/*  leetcode reverse hai use case dekh lo
+class Solution {
+    public int reverse(int x) {
+        int res = 0;
+        boolean isNeg = false;
+        
+        while(x!=0){
+            int d = x%10;
+            
+            if (res > Integer.MAX_VALUE / 10 ||
+                (res == Integer.MAX_VALUE / 10 && d > 7)) {
+                return 0;
+            }
 
+            if (res < Integer.MIN_VALUE / 10 ||
+                (res == Integer.MIN_VALUE / 10 && d < -8)) {
+                return 0;
+            }
+            res = res*10+d;
+            x /=10;
 
+        }
+        
+        return res;
+        
+    }
+}*/
 
 
 

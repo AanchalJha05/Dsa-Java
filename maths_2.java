@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /*public class maths_2 {
@@ -67,7 +68,7 @@ import java.util.Arrays;
 
 }*/
 
-public class maths_2{
+/*public class maths_2{
     private int euclideanalgo(int a,int b){
         a = Math.abs(a);
         b = Math.abs(b);
@@ -89,4 +90,115 @@ public class maths_2{
         System.out.println("GCD of "+ a +" and "+ b + " is "+ m.euclideanalgo(a, b) );
     }
 
-}// time complexity is log(min(a,b))
+}*/ // time complexity is log(min(a,b))
+
+
+//spf
+
+/*public class maths_2{
+   
+        private ArrayList<Integer> findUniquePrimeFactors(int N){
+            ArrayList<Integer> list = new ArrayList<>();
+            int sqrt = (int)Math.sqrt(N);
+            for(int i=2;i<=sqrt;i++){
+                if(N%i==0){
+                    list.add(i);
+                    while(N%i==0){
+                        N=N/i;
+                    }
+                }
+            }
+            if(N>1){
+                list.add(N);
+
+            }
+            return list;
+        }
+        public static void main(String[] args) {
+        
+            maths_2 m = new maths_2();
+            ArrayList<Integer> list = m.findUniquePrimeFactors(12);
+            System.out.println(list);
+    }
+        
+    
+    
+}*/
+
+// spf using sieve algo
+
+// (n*log(log(n)))
+//is the time complexity
+import java.util.*;
+
+/*public class maths_2 {
+
+    private ArrayList<Integer> Spfusingsieve(int n) {
+
+        ArrayList<Integer> res = new ArrayList<>();
+        int[] prime = new int[n + 1];
+
+        // Initially, every number is its own smallest prime factor
+        for (int i = 2; i <= n; i++) {
+            prime[i] = i;
+        }
+
+        for (int i = 2; i * i <= n; i++) {
+
+            if (prime[i] == i) {   // i is prime
+
+                for (int j = i * i; j <= n; j += i) {
+
+                    if (prime[j] == j) {
+                        prime[j] = i;
+                    }
+                }
+            }
+        }
+
+        for (int i = 2; i <= n; i++) {
+            res.add(prime[i]);
+        }
+
+        return res;
+    }
+
+    public static void main(String[] args) {
+
+        maths_2 m = new maths_2();
+        ArrayList<Integer> res = m.Spfusingsieve(10);
+        System.out.println(res);
+    }
+}*/
+
+
+//  MOST IMPORTANT QUESTION OF 
+
+// ek array h size 5 ka ek baar for loop lga kr 4 baar print kro 
+// 8, 9,1,3,2
+// ek line likh kr krna hai 
+
+public class maths_2{
+    public static void main(String [] args){
+        int[] arr = {8,9,1,3,2};
+        for(int i=0;i<=19;i++){  // 4 baar krne pr 19 aayega 0,1,2,3,4 ek baar  2nd time 5,6,7,8,9 3rd time  10,11,12,13,14 and 4t time 15,16,17,18,19
+            System.out.print(arr[i%5]); // size hai 5 and hamne % yhe use kiya hai taki array me 2 ke badd again vo 8 se start kr dega so that circular loop 4 round tk bne rahe 
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
