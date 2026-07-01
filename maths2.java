@@ -77,19 +77,20 @@ public class maths2{
     public void primedemo(int num){
         if(num<2){
             System.out.println("not prime ");
+            return;
         }
         int sqrt = (int)Math.sqrt(num);
         for(int i=2;i<=sqrt;i++){
             if(num%i==0){
                 System.out.println("the number is not prime");
-            }else{
-                System.out.println("the number is prime");
+                return;
             }
             
         }
+        System.out.println("this is prime");
     }
     public static void main(String [] args){
         maths2 m = new maths2();
-        m.primedemo(1);
+        m.primedemo(4);
     }
 }

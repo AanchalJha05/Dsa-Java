@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 /*public class bit_manipulation{
     public boolean isEven(int num){
         if((num&1)==0){
@@ -144,7 +145,7 @@ public class bit_manipulation{
         System.out.println(res);
     }
 }*/
-public class bit_manipulation{
+/*public class bit_manipulation{
     private char tolower(char ch){
         
         return (char)(ch|(1<<5));
@@ -155,5 +156,71 @@ public class bit_manipulation{
         
         System.out.println(m.tolower('A'));
     }
+}*/
+import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
+
+public class bit_manipulation{
+    public List<List<Integer>> subset(int[] nums){
+        List<List<Integer>> res = new ArrayList<>();
+        int len = nums.length;
+        int subset = 1<<len;
+        for(int i=0;i<subset;i++){
+            List<Integer> list = new ArrayList<>();
+            for(int j=0;j<len;j++){
+                if((i & (1<<j))!=0){
+                    list.add(nums[j]);
+
+                }
+                
+            }res.add(list);
+
+        }return res;
+        
+        
+    }
+    
+
+    public static void main(String[] args) {
+        bit_manipulation m = new bit_manipulation();
+        System.out.println(m.subset(new int []{1,2,3}));
+    }
 }
 
+
+/*import java.util.*;
+
+public class bit_manipulation {
+
+    public List<List<Integer>> subset(int[] nums) {
+
+        List<List<Integer>> res = new ArrayList<>();
+
+        int len = nums.length;
+        int totalSubsets = 1 << len;
+
+        for (int i = 0; i < totalSubsets; i++) {
+
+            List<Integer> list = new ArrayList<>();
+
+            for (int j = 0; j < len; j++) {
+
+                if ((i & (1 << j)) != 0) {
+                    list.add(nums[j]);
+                }
+            }
+
+            res.add(list);
+        }
+
+        return res;
+    }
+
+    public static void main(String[] args) {
+
+        bit_manipulation m = new bit_manipulation();
+
+        System.out.println(m.subset(new int[]{1, 2, 3}));
+    }
+}*/
