@@ -100,3 +100,59 @@ class Solution {
         return maxlen;
     }
 }
+
+// 1456. Maximum Number of Vowels in a Substring of Given Length (leetcode)
+
+int n= s.length();
+int count =0;
+int maxcount =0;
+for(int i=0;i<k;i++){
+    char ch = s.charAt(i);
+    if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
+        count++;
+    }
+}
+maxcount=count;
+for(int i=1;i<n-k+1;i++){
+    char left = s.charAt(i-1);
+    if(left=='a'||left=='e'||left=='i'||left=='o'||left=='u'){
+        count--;
+    }
+    char right = s.charAt(i+k-1);
+    if(right=='a'||right=='e'||right=='i'||right=='o'||right=='u'){
+        count++;
+    }
+    maxcount = Math.max(maxcount,count);
+}
+
+
+
+
+// 904. Fruit Into Baskets
+class Solution {
+    public int totalFruit(int[] fruits) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int windowstart=0;
+        int windowend =0;
+        int n= fruits.length;
+        int maxcount =0;
+        
+        while(windowend<n){
+            map.put(fruits[windowend],map.getOrDefault(fruits[windowend], 0) + 1);
+            while(map.size()>2){
+                map.put(fruits[windowstart],map.get(fruits[windowstart])-1);
+                if(map.get(fruits[windowstart])==0){
+                    map.remove(fruits[windowstart]);
+                }
+                windowstart++;
+                
+
+            }
+            
+            maxcount = Math.max(maxcount,windowend-windowstart+1);
+            windowend++;
+        }
+        return maxcount;
+        
+    }
+}
