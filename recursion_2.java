@@ -127,6 +127,7 @@ public class recursion_2{
 }
 */
 
+// counting the sequences
 
 public class recursion_2{
     private int printallsubsequence(String input,int index, String current){
