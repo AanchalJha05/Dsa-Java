@@ -37,12 +37,15 @@ public class hashmapquestion{
         set.add(4);
         set.add(6);
         System.out.println(set);
+        // isme ham iterate krte krte remove nhi kr skte hai
+
         for(Integer i:set){
             System.out.println(i);
 
         }
+        // isme ham iterate krte krte remove krte hai
         Iterator<Integer> itr = set.iterator();
-        while (itr.hasNext()) {
+        while (itr.hasNext()) {  
             System.out.println(itr.next());
             itr.remove();
             
@@ -51,3 +54,15 @@ public class hashmapquestion{
         
     }
 }
+
+
+// formula to find minimum element from the hash table
+int freqmin =Integer.MAX_VALUE;
+        int ans =-1;
+        for(int key:freqmap.keySet()){
+            int freq = freqmap.get(key);
+            if(freq<freqmin){
+                freqmin = freq;
+                ans = key;
+            }
+        }
