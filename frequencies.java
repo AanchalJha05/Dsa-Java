@@ -65,6 +65,7 @@ public class frequencies {
     }
 }*/
 
+/* 
 public class frequencies{
     public void uniqueChar(String s){
         int[] freq = new int[26];
@@ -90,9 +91,25 @@ public class frequencies{
     }
 }
 
+*/
 
-
-
+public class frequencies{
+    public static void main(String[] args) {
+        String name = "banana";
+        for(int i=0;i<name.length();i++){
+            char ch = name.charAt(i);
+            int count =0;
+            for(int j=0;j<name.length();j++){
+                if(ch== name.charAt(j)){
+                    count++;
+                }
+            }
+            System.out.println(ch +" -> "+count);
+        }
+        
+        
+    }
+}
 
 
 
