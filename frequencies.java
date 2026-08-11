@@ -95,6 +95,7 @@ public class frequencies{
 
 public class frequencies{
     public static void main(String[] args) {
+        /* 
         String name = "banana";
         for(int i=0;i<name.length();i++){
             char ch = name.charAt(i);
@@ -106,6 +107,42 @@ public class frequencies{
             }
             System.out.println(ch +" -> "+count);
         }
+        
+        */
+       
+        /*String name = "banana";
+        boolean[] visited = new boolean[256];
+
+        for(int i=0;i<name.length();i++){
+            char ch = name.charAt(i);
+            if(visited[ch]){
+                continue;
+            }
+            int count=0;
+            for(int j = 0; j < name.length(); j++){
+                if(ch== name.charAt(j)){
+                    count++;
+                }
+
+
+                
+            }
+            visited[ch]= true;
+            System.out.println(ch +" -> "+ count);
+        }*/
+        String name = "banana";
+        int[] freq = new int[26];
+        for(int i=0;i<name.length();i++){
+            char ch = name.charAt(i);
+            freq[ch-'a']++;
+        }
+        for(int i=0;i<26;i++){
+            char letter = (char)('a'+i);  // yhe (char)('a'+i) imse char jo hai vo int ko char me change krne ke liye use hota hai
+            System.out.println(letter +" -> "+ freq[i]);
+        }
+
+
+
         
         
     }
