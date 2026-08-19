@@ -4,11 +4,11 @@ import java.util.*;
 /*public class hashmap2 {
     public static void main(String[] args) {
         String s = "banana";
-    HashMap<Character,Integer> map = new HashMap<>();
-    for(int i=0;i<s.length();i++){
-        char ch = s.charAt(i);
-        map.put(ch,map.getOrDefault(ch,0)+1);
-    }
+        HashMap<Character,Integer> map = new HashMap<>();
+        for(int i=0;i<s.length();i++){
+            char ch = s.charAt(i);
+            map.put(ch,map.getOrDefault(ch,0)+1);
+          }
     System.out.println(map);
     }
        
@@ -47,7 +47,7 @@ import java.util.*;
     }  
 }*/
 //Question 4 — Find the most frequent number
-public class hashmap2 {
+/*public class hashmap2 {
     public static void main(String[] args) {
         int[] arr = {1, 2, 2, 3, 1, 2, 3, 3, 3};
         HashMap<Integer,Integer> map = new HashMap<>();
@@ -64,7 +64,7 @@ public class hashmap2 {
             int values = entry.getValue();
             //maxi = Math.max(maxi,values); // to only get the max values 
             if(values>maxi){   // tp get the both key and values
-                
+
                 maxi = values;
                 answer = key;
 
@@ -76,4 +76,12 @@ public class hashmap2 {
 
 
     }  
+}*/
+//Question 5 — Find the first non-repeating number
+public class hashmap2 {
+    public static void main(String[] args) {
+        
+    }
+       
 }
+
